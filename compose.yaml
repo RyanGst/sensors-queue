@@ -1,15 +1,14 @@
-version: "3.9"
+version: "3.8"
 services:
-  rabbitmq:
+  queue:
     image: rabbitmq:4.1.0-management
-    container_name: rabbitmq
     ports:
       - 5672:5672
       - 15672:15672
     environment:
         - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
         - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-      volumes:
+    volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 volumes:
   rabbitmq_data:
