@@ -2,7 +2,7 @@ import logging
 import json
 import time
 from src.start_queue import start_queue
-from src.fake_reader import read_fake_sensor
+from src.sensor_reader import read_sensor
 
 QUEUE_NAME = 'sensor_data'
 DEFAULT_DELAY = 2
@@ -14,7 +14,7 @@ def app():
     channel.queue_declare(queue=QUEUE_NAME)
     
     while True:
-        message = read_fake_sensor()
+        message = read_sensor()
         channel.basic_publish(exchange='', routing_key=QUEUE_NAME, body=json.dumps(message))
         logging.info(f"Sent message: {message}")
         time.sleep(DEFAULT_DELAY)
