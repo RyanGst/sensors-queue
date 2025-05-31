@@ -13,7 +13,10 @@ const sockets = new Set<WebSocket>();
 
 Deno.serve({ port: 8080 }, (req) => {
   const { socket, response } = Deno.upgradeWebSocket(req);
-  socket.onopen = () => sockets.add(socket);
+  socket.onopen = () => {
+    console.log("🐇 WebSocket client connected");
+    sockets.add(socket);
+  };
   socket.onclose = () => sockets.delete(socket);
   socket.onerror = () => sockets.delete(socket);
   return response;
