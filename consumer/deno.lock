@@ -8,8 +8,7 @@
     "jsr:@std/bytes@^1.0.5": "1.0.6",
     "jsr:@std/internal@^1.0.6": "1.0.8",
     "jsr:@std/io@*": "0.225.2",
-    "jsr:@std/io@0.225.0": "0.225.0",
-    "npm:amqplib@~0.10.8": "0.10.8"
+    "jsr:@std/io@0.225.0": "0.225.0"
   },
   "jsr": {
     "@nashaddams/amqp@1.1.0": {
@@ -43,31 +42,6 @@
       ]
     }
   },
-  "npm": {
-    "amqplib@0.10.8": {
-      "integrity": "sha512-Tfn1O9sFgAP8DqeMEpt2IacsVTENBpblB3SqLdn0jK2AeX8iyCvbptBc8lyATT9bQ31MsjVwUSQ1g8f4jHOUfw==",
-      "dependencies": [
-        "buffer-more-ints",
-        "url-parse"
-      ]
-    },
-    "buffer-more-ints@1.0.0": {
-      "integrity": "sha512-EMetuGFz5SLsT0QTnXzINh4Ksr+oo4i+UGTXEshiGCQWnsgSs7ZhJ8fzlwQ+OzEMs0MpDAMr1hxnblp5a4vcHg=="
-    },
-    "querystringify@2.2.0": {
-      "integrity": "sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ=="
-    },
-    "requires-port@1.0.0": {
-      "integrity": "sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ=="
-    },
-    "url-parse@1.5.10": {
-      "integrity": "sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==",
-      "dependencies": [
-        "querystringify",
-        "requires-port"
-      ]
-    }
-  },
   "redirects": {
     "https://deno.land/x/amqp/mod.ts": "https://deno.land/x/amqp@v0.24.0/mod.ts"
   },
@@ -97,8 +71,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@nashaddams/amqp@^1.1.0",
-      "jsr:@std/assert@1",
-      "npm:amqplib@~0.10.8"
+      "jsr:@std/assert@1"
     ]
   }
 }
