@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  consumer:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.consumer.entrypoints=websecure"
+      - "traefik.http.routers.consumer.tls.certresolver=myresolver"
+      - "traefik.http.routers.consumer.service=consumer"
+      - "traefik.http.services.consumer.loadbalancer.server.port=8080"
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    environment:
+      - DENO_ENV=${DENO_ENV:-production}
+      - RABBITMQ_HOST=${RABBITMQ_HOST:-rabbitmq}
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USERNAME=${RABBITMQ_USERNAME:-guest}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD:-guest}
+    command: [
+      "deno",
+      "run",
+      "--allow-net",
+      "--allow-read",
+      "--allow-env",
+      "main.ts",
+    ]
+volumes:
+  rabbitmq_data:
