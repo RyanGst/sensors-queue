@@ -1,12 +1,9 @@
 FROM denoland/deno:2.2.12
 
-# Create working directory
 WORKDIR /app
 
-# Copy source
-COPY .. .
+COPY . .
 
-# Compile the main app
 RUN deno cache main.ts
 
 EXPOSE 8080
