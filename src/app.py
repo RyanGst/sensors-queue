@@ -16,7 +16,7 @@ def app():
     while True:
         message = read_sensor()
         channel.basic_publish(exchange='', routing_key=QUEUE_NAME, body=json.dumps(message))
-        logging.info(f"Sent message: {message}")
+        logging.info(f"Sent message: {json.dumps(message)}")
         time.sleep(DEFAULT_DELAY)
 
 if __name__ == "__main__":
