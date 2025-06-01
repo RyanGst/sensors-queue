@@ -27,3 +27,5 @@ It consists of two main components:
     *   Can be run locally using the provided `compose.yaml` or connected to a remote instance.
 *   **Docker:** Used for containerizing RabbitMQ and potentially for deploying the consumer application.
 
+
+[Video](https://youtu.be/HlxMgqI8xFM)
