@@ -2,6 +2,10 @@
 
 This project demonstrates a simple system for publishing and consuming sensor data (simulated temperature and humidity) using RabbitMQ as a message broker.
 
+## Demo in 🇧🇷
+
+[![DHT11 Python RabbitMQ and Deno Demo](https://img.youtube.com/vi/HlxMgqI8xFM/1.jpg)](https://www.youtube.com/watch?v=HlxMgqI8xFM)
+
 It consists of two main components:
 
 1.  **Python Publisher (`src/app.py`):**
@@ -22,10 +26,9 @@ It consists of two main components:
     *   `pika`: RabbitMQ client library.
 *   **Deno:** For the data consuming application.
     *   `amqplib`: RabbitMQ client library.
-    *   `dotenv`: For managing environment variables.
 *   **RabbitMQ:** Message broker for decoupling the publisher and consumer.
     *   Can be run locally using the provided `compose.yaml` or connected to a remote instance.
 *   **Docker:** Used for containerizing RabbitMQ and potentially for deploying the consumer application.
 
 
-[Video](https://youtu.be/HlxMgqI8xFM)
+
